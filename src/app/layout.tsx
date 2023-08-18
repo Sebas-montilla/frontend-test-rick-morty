@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Sidebar from '@/components/Sidebar'
 import { DataProvider } from '@/context/DataContext'
+import { Toaster } from "@/components/ui/toaster"
+import AuthContextProvider from '@/context/authContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,11 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex`}>
-        <DataProvider>
-          <Sidebar />
-          {children}
-        </DataProvider>
+      <body className={`${inter.className} dark`}>
+        <AuthContextProvider>
+          <DataProvider>
+            {children}
+            <Toaster />
+          </DataProvider>
+        </AuthContextProvider>
       </body>
     </html>
   )

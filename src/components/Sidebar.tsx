@@ -27,7 +27,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             onClick={() => {
               setExpanded((curr) => !curr)
             }}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+            className="p-1.5 rounded-lg bg-black hover:bg-black/70"
           >
             {expanded ? <ChevronFirst /> : <ChevronLast />}
           </button>
@@ -49,7 +49,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             `}
           >
             <div className="leading-4">
-              <h4 className="font-semibold">Rick Sanchez</h4>
+              <h4 className="font-semibold text-black">Rick Sanchez</h4>
               <span className="text-xs text-gray-600">
                 pickelrick@science.com
               </span>

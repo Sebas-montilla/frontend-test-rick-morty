@@ -1,7 +1,8 @@
 import React from 'react'
+import Login from '@/sections/Login/Login'
 
 const page = () => {
-  return <div className="p-3">Dashboard</div>
+  return <Login />
 }
 
 export default page
