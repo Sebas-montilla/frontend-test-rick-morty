@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { DataProvider } from '@/context/DataContext'
 import { Toaster } from "@/components/ui/toaster"
 import AuthContextProvider from '@/context/authContext'
 
@@ -21,10 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} dark`}>
         <AuthContextProvider>
-          <DataProvider>
             {children}
             <Toaster />
-          </DataProvider>
         </AuthContextProvider>
       </body>
     </html>
