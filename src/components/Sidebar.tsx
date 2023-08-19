@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { data } from '@/assets/data/SidebarLinks/sidebarLinks'
 import { usePathname } from 'next/navigation'
 
-const SidebarContext = createContext()
+const SidebarContext = createContext({ expanded: true })
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState(true)
