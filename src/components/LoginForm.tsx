@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+import Cookies from 'js-cookie'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -20,10 +21,10 @@ import { useAuthContext } from '@/context/authContext'
 import { useRouter } from 'next/navigation'
 
 const FormSchema = z.object({
-  username: z.string().includes('pickelrick@science.com', {
+  username: z.string().includes('mortysmith@science.com', {
     message: 'Invalid username'
   }),
-  password: z.string().includes('ricksanchez', {
+  password: z.string().includes('mortysmith', {
     message: 'Invalid password'
   })
 })
@@ -37,26 +38,14 @@ export function LoginForm() {
     resolver: zodResolver(FormSchema)
   })
 
+  const hashUserData = (username: string, password: string) => {
+    const data = `${username}: ${password}`
+    return btoa(data)
+  }
+
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    fetch('/api/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: data.username,
-        password: data.password
-      })
-    })
-      .then(async (res) => await res.json())
-      .then((res) => {
-        login(res.data)
-        router.push('/dashboard')
-      })
-      .catch((err) => {
-        toast({
-          variant: 'destructive',
-          title: 'Uh oh! Something went wrong.',
-          description: err
-        })
-      })
+    Cookies.set('authTokens', hashUserData(data.username, data.password))
+    router.push('/dashboard')
   }
 
   return (
@@ -73,7 +62,7 @@ export function LoginForm() {
                   <Input placeholder="email" {...field} />
                 </FormControl>
                 <FormDescription>
-                  pickelrick@science.com for test reasons
+                  mortysmith@science.com for test reasons
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -88,7 +77,7 @@ export function LoginForm() {
                 <FormControl>
                   <Input placeholder="password" {...field} />
                 </FormControl>
-                <FormDescription>ricksanchez for test reasons</FormDescription>
+                <FormDescription>mortysmith for test reasons</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
