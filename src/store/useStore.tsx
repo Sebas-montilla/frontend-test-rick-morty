@@ -10,7 +10,9 @@ interface CharacterState {
   getCharacters: (url: string) => Promise<void>
   getEpisodes: (url: string) => Promise<void>
   addCharacter: (newChar: Character) => void
+  addEpisode: (newEp: Episode) => void
   editCharacter: (characterId: number, data: Character) => void
+  editEpisode: (episodeId: number, data: Episode) => void
 }
 
 export const useStore = create<CharacterState>()((set) => ({
@@ -59,6 +61,15 @@ export const useStore = create<CharacterState>()((set) => ({
       }
     })
   },
+  addEpisode: (newEp) => {
+    set((state) => {
+      const updatedEpisodes = [...state.episode, newEp]
+      return {
+        episode: updatedEpisodes,
+        infoEpisode: state.infoEpisode
+      }
+    })
+  },
   editCharacter: (characterId, updateCharacter) => {
     set((state) => {
       const updatedCharacter = state.character.map((c) =>
@@ -68,6 +79,18 @@ export const useStore = create<CharacterState>()((set) => ({
       return {
         character: updatedCharacter,
         infoCharacter: state.infoCharacter
+      }
+    })
+  },
+  editEpisode: (episodeId, updateEpisode) => {
+    set((state) => {
+      const updatedEpisode = state.episode.map((e) =>
+        episodeId === e.id ? updateEpisode : e
+      )
+
+      return {
+        episode: updatedEpisode,
+        infoEpisode: state.infoEpisode
       }
     })
   }

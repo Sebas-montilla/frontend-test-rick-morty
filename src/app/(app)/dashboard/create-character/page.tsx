@@ -1,8 +1,8 @@
 import React from 'react'
-import AddCharacterForm from '@/components/AddCharacterForm'
+import AddCharacter from '@/sections/Dashboard/Character/AddCharacter/AddCharacter'
 
 const page = () => {
-  return <AddCharacterForm />
+  return <AddCharacter />
 }
 
 export default page
