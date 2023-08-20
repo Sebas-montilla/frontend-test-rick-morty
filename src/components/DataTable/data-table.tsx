@@ -91,9 +91,9 @@ export function DataTable<TData, TValue>({
                     {header.isPlaceholder
                       ? null
                       : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                   </TableHead>
                 )
               })}
@@ -101,8 +101,9 @@ export function DataTable<TData, TValue>({
           ))}
         </TableHeader>
         <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
+          {table.getRowModel().rows?.length
+            ? (
+                table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && 'selected'}
@@ -113,14 +114,15 @@ export function DataTable<TData, TValue>({
                   </TableCell>
                 ))}
               </TableRow>
-            ))
-          ) : (
+                ))
+              )
+            : (
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 No results.
               </TableCell>
             </TableRow>
-          )}
+              )}
         </TableBody>
       </Table>
       <hr />

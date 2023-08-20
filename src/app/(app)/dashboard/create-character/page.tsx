@@ -1,7 +1,8 @@
 import React from 'react'
+import AddCharacterForm from '@/components/AddCharacterForm'
 
 const page = () => {
-  return <div>page</div>
+  return <AddCharacterForm />
 }
 
 export default page

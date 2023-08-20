@@ -7,7 +7,7 @@ export interface Info {
   count: number
   pages: number
   next: string
-  prev: null
+  prev: string | null
 }
 
 export interface Character {
@@ -18,11 +18,11 @@ export interface Character {
   type: string
   gender: Gender
   origin: Location
-  location: Location
-  image: string
-  episode: string[]
-  url: string
-  created: Date
+  location?: Location
+  image?: string
+  episode?: string[]
+  url?: string
+  created?: Date
 }
 
 export enum Gender {
@@ -33,7 +33,7 @@ export enum Gender {
 
 export interface Location {
   name: string
-  url: string
+  url?: string
 }
 
 export enum Species {
