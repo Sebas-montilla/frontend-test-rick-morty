@@ -73,7 +73,7 @@ export function DataTable<TData, TValue>({
     <div className="rounded-md border">
       <div className="flex items-center py-4 px-4">
         <Input
-          placeholder="Filter by name, species, gender or type..."
+          placeholder="Enter search"
           value={globalFilter ?? ''}
           onChange={(event) => {
             setGlobalFilter(String(event.target.value))
@@ -155,7 +155,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant="outline"
           className="hidden h-8 w-8 p-0 lg:flex"
-          onClick={() => table.setPageIndex(0)}
+          onClick={() => { table.setPageIndex(0) }}
           disabled={!table.getCanPreviousPage()}
         >
           <span className="sr-only">Go to first page</span>
@@ -164,7 +164,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant="outline"
           className="h-8 w-8 p-0"
-          onClick={() => table.previousPage()}
+          onClick={() => { table.previousPage() }}
           disabled={!table.getCanPreviousPage()}
         >
           <span className="sr-only">Go to previous page</span>
@@ -173,7 +173,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant="outline"
           className="h-8 w-8 p-0"
-          onClick={() => table.nextPage()}
+          onClick={() => { table.nextPage() }}
           disabled={!table.getCanNextPage()}
         >
           <span className="sr-only">Go to next page</span>
@@ -182,7 +182,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant="outline"
           className="hidden h-8 w-8 p-0 lg:flex"
-          onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+          onClick={() => { table.setPageIndex(table.getPageCount() - 1) }}
           disabled={!table.getCanNextPage()}
         >
           <span className="sr-only">Go to last page</span>

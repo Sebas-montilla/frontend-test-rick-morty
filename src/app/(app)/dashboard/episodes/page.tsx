@@ -1,7 +1,8 @@
+import EpisodeDashboard from '@/sections/Dashboard/Episode/EpisodeDashboard'
 import React from 'react'
 
 const page = () => {
-  return <div>page</div>
+  return <EpisodeDashboard />
 }
 
 export default page

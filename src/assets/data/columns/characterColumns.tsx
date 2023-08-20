@@ -15,7 +15,7 @@ export const columns: Array<ColumnDef<Character>> = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          onClick={() => { column.toggleSorting(column.getIsSorted() === 'asc') }}
         >
           Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -29,7 +29,7 @@ export const columns: Array<ColumnDef<Character>> = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          onClick={() => { column.toggleSorting(column.getIsSorted() === 'asc') }}
         >
           Status
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -43,7 +43,7 @@ export const columns: Array<ColumnDef<Character>> = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          onClick={() => { column.toggleSorting(column.getIsSorted() === 'asc') }}
         >
           Species
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -57,7 +57,7 @@ export const columns: Array<ColumnDef<Character>> = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          onClick={() => { column.toggleSorting(column.getIsSorted() === 'asc') }}
         >
           Type
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -71,7 +71,9 @@ export const columns: Array<ColumnDef<Character>> = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          onClick={() => {
+            column.toggleSorting(column.getIsSorted() === 'asc')
+          }}
         >
           Gender
           <ArrowUpDown className="ml-2 h-4 w-4" />
