@@ -90,7 +90,6 @@ export function DataTableRowActionsCharacter({
     }
     editCharacter(row.id, updateCharacter)
     toast({
-      variant: "success",
       description: `The character ${data.name} has been updated`
     })
   }
@@ -173,11 +172,9 @@ export function DataTableRowActionsCharacter({
                   </FormItem>
                 )}
               />
-              <DialogTrigger className="w-full">
                 <Button className="w-full" type="submit">
                   Save changes
                 </Button>
-              </DialogTrigger>
             </form>
           </FormUI>
         </div>

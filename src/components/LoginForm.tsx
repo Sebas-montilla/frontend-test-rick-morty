@@ -45,7 +45,7 @@ export function LoginForm() {
   }
 
   return (
-    <div className="p-6 shadow-2xl shadow-accent-electricgreen bg-background rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
+    <div className="p-6 shadow-2xl shadow-blue-solid bg-background-dark rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField

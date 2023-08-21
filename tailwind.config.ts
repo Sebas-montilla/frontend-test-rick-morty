@@ -19,10 +19,19 @@ module.exports = {
       colors: {
         text: '#F0F2EB',
         border: 'hsl(var(--border))',
-        input: '#0D0D0D',
+        input: '#313234',
+        negative: "#C6391A",
         ring: 'hsl(var(--ring))',
-        background: '#1F1F1F',
+        background: {
+          dark: "#1A1A1A",
+          medium: "#1E1E20",
+          light: "#313234"
+        },
         foreground: 'hsl(var(--foreground))',
+        blue: {
+          solid: "#11B0C8",
+          hover: "#42B4Ca"
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -39,7 +48,7 @@ module.exports = {
           lightyellow: '#F5EF6A'
         },
         destructive: {
-          DEFAULT: '#C6171E',
+          DEFAULT: '#C6391A',
           foreground: 'hsl(var(--destructive-foreground))'
         },
         positive: '#81FC5B',
