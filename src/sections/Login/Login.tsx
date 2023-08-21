@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import wallpaper from '@/assets/images/rick-and-morty-login.png'
+import wallpaper from '@/assets/images/rick-sanchez-rick.jpg'
 import { LoginForm } from '@/components/LoginForm'
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
             className='object-cover'
           />
         </section>
-        <section className="w-[100%] md:w-[50%] lg:w-[50%] h-full flex items-center justify-center bg-gradient-to-r from-[#84FD61]/20 to-[#0D0D0D]/0">
+        <section className="w-[100%] md:w-[50%] lg:w-[50%] h-full flex items-center justify-center bg-background-medium">
           <LoginForm />
         </section>
       </main>

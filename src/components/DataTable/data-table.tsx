@@ -70,7 +70,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="rounded-md border border-gray-700 bg-input w-full overflow-x-auto">
+    <div className="rounded-md border-2 border-white/20 bg-background-medium w-full overflow-x-auto">
       <div className="flex items-center py-4 px-4">
         <Input
           placeholder="Enter search"
@@ -123,8 +123,7 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-      <hr />
-      <section className="flex items-center space-x-2 justify-between p-4">
+      <section className="flex items-center space-x-2 justify-between border-t-2 border-white/20 p-4">
         <div className="flex items-center space-x-2">
           <p className="text-sm font-medium">
             Number of Characters: {data.length}

@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { data } from '@/assets/data/SidebarLinks/sidebarLinks'
-import Logo from '@/assets/images/Rick-And-Morty-Logo.png'
+import Logo from '@/assets/images/logos/logoA.svg'
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -22,7 +22,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="w-full h-[4rem] m-h-[5rem] flex items-center justify-between lg:justify-end bg-input px-7 py-2">
+    <nav className="w-full h-[4rem] m-h-[5rem] flex items-center justify-between lg:justify-end bg-background-medium px-7 py-2">
       <section className="flex lg:hidden">
         <Button
           variant="outline"
@@ -63,7 +63,7 @@ const Nav = () => {
                 width={128}
               />
               <Button
-                variant="outline"
+                variant="default"
                 onClick={() => {
                   setOpen((curr) => !curr)
                 }}
@@ -81,8 +81,8 @@ const Nav = () => {
           transition-colors group
           ${
             pathname === item.path
-              ? 'bg-white/10 text-accent-electricgreen/90 font-semibold'
-              : 'hover:bg-white/5 hover:text-accent-electricgreen/20 text-text/80'
+              ? 'bg-white/10 text-blue-solid font-semibold'
+              : 'hover:bg-white/5 hover:text-blue-hover text-text/80'
           }
         `}
                     onClick={() => {
@@ -94,13 +94,13 @@ const Nav = () => {
                       {item.text}
                     </span>
                   </li>
-                  {item.text === 'Episodes' ? <hr /> : ''}
+                  {item.text === 'Episodes' ? <hr className='border-white/20'/> : ''}
                 </Link>
               ))}
             </div>
-            <hr />
+            <hr className='border border-white/20' />
 
-            <Button className='w-full mt-4' variant="outline" onClick={handleLogout}>
+            <Button className='w-full mt-4' variant="default" onClick={handleLogout}>
               Log out
             </Button>
           </div>

@@ -7,7 +7,8 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { data } from '@/assets/data/SidebarLinks/sidebarLinks'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import Logo from '@/assets/images/Rick-And-Morty-Logo.png'
+import Logo from '@/assets/images/logos/logoA.svg'
+import { Button } from '@/components/ui/button'
 
 export const SidebarContext = createContext({
   expanded: true
@@ -17,8 +18,8 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const [expanded, setExpanded] = useState<true | false>(true)
 
   return (
-    <aside className="h-screen lg:flex hidden">
-      <nav className="h-full flex flex-col bg-input border-r shadow-sm">
+    <aside className="h-screen lg:flex hidden border-r-2 border-white/20">
+      <nav className="h-full flex flex-col bg-background-medium border-r shadow-sm">
         <div className="px-4 py-2 pb-2 flex justify-between items-center">
           <Image
             src={Logo}
@@ -30,21 +31,22 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             height={100}
             width={128}
           />
-          <button
+          <Button
+            variant='default'
             onClick={() => {
               setExpanded((curr) => !curr)
             }}
-            className="p-1.5 rounded-lg bg-black hover:bg-black/70"
+            className="p-1.5 rounded-lg"
           >
             {expanded ? <ChevronFirst /> : <ChevronLast />}
-          </button>
+          </Button>
         </div>
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
 
-        <div className="border-t flex p-3 ">
+        <div className="border-t-2 border-white/20 flex p-3 ">
           <Avatar>
             <AvatarImage src="https://4kwallpapers.com/images/wallpapers/rick-and-morty-rick-2560x2560-9494.png" />
             <AvatarFallback>MS</AvatarFallback>
@@ -83,8 +85,8 @@ export function SidebarItem() {
           transition-colors group
           ${
             pathname === item.path
-              ? 'bg-white/10 text-accent-electricgreen/90 font-semibold'
-              : 'hover:bg-white/5 hover:text-accent-electricgreen/20 text-text/80'
+              ? 'bg-white/10 text-blue-solid font-semibold'
+              : 'hover:bg-white/5 hover:text-blue-hover text-text/80'
           }
       `}
           >
@@ -101,7 +103,7 @@ export function SidebarItem() {
               <div
                 className={`
             absolute left-full rounded-md px-2 py-1 ml-6
-            bg-black/90 text-accent-electricgreen/90 text-sm
+            bg-background-dark/90 text-blue-solid text-sm
             invisible opacity-20 -translate-x-3 transition-all
             group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
         `}
@@ -110,7 +112,7 @@ export function SidebarItem() {
               </div>
             )}
           </li>
-          {item.text === 'Episodes' ? <hr /> : ''}
+          {item.text === 'Episodes' ? <hr className='border-white/20' /> : ''}
         </Link>
       ))}
     </>
