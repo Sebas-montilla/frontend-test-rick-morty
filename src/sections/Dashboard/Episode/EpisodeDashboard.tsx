@@ -46,7 +46,7 @@ const EpisodeDashboard = () => {
           </h1>
         </div>
       </section>
-      <div>
+      <div className='w-full'>
         {episode && (
           <>
             <DataTable columns={EpisodeColumns} data={episode} />

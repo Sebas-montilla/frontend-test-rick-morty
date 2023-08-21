@@ -52,8 +52,8 @@ const Nav = () => {
       {/* Sidebar */}
       {open && (
         <div className="bg-gray-700/40 min-h-screen fixed top-0 left-0 right-0 backdrop-blur-sm transition-all ease-in-out duration-500">
-          <div className="bg-background min-h-screen w-full md:w-80 top-0 left-0 p-3">
-            <div className="flex justify-between pb-2">
+          <div className="bg-input min-h-screen w-full md:w-80 top-0 left-0 p-3">
+            <div className="flex justify-between pb-5">
               <Image
                 src={Logo}
                 className="overflow-hidden transition-all w-32"
@@ -63,6 +63,7 @@ const Nav = () => {
                 width={128}
               />
               <Button
+                variant="outline"
                 onClick={() => {
                   setOpen((curr) => !curr)
                 }}
@@ -97,6 +98,11 @@ const Nav = () => {
                 </Link>
               ))}
             </div>
+            <hr />
+
+            <Button className='w-full mt-4' variant="outline" onClick={handleLogout}>
+              Log out
+            </Button>
           </div>
         </div>
       )}

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -50,6 +51,7 @@ const FormSchema = z.object({
 const AddCharacterForm = () => {
   const { addCharacter } = useStore()
   const { toast } = useToast()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema)
@@ -76,7 +78,9 @@ const AddCharacterForm = () => {
       origin: { name: data.origin, url: '' }
     }
     addCharacter(newChar)
+    router.push('/dashboard/characters')
     toast({
+      variant: 'success',
       description: `The character has been created succesfully!`
     })
   }

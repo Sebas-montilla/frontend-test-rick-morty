@@ -90,6 +90,7 @@ export function DataTableRowActionsCharacter({
     }
     editCharacter(row.id, updateCharacter)
     toast({
+      variant: "success",
       description: `The character ${data.name} has been updated`
     })
   }

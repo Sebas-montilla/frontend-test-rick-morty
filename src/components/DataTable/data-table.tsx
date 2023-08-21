@@ -70,7 +70,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="rounded-md border border-gray-700 bg-input">
+    <div className="rounded-md border border-gray-700 bg-input w-full overflow-x-auto">
       <div className="flex items-center py-4 px-4">
         <Input
           placeholder="Enter search"

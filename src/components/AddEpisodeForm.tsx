@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -35,6 +36,7 @@ const FormSchema = z.object({
 const AddEpisodeForm = () => {
   const { addEpisode } = useStore()
   const { toast } = useToast()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema)
@@ -48,7 +50,9 @@ const AddEpisodeForm = () => {
       episode: data.episode
     }
     addEpisode(newEp)
+    router.push('/dashboard/episodes')
     toast({
+      variant: 'success',
       description: `The episode has been created succesfully!`
     })
   }
@@ -63,7 +67,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter a name, e.g 'Zumbon'" {...field} />
+                  <Input placeholder="Enter a name, e.g 'Rick and the Rick Kind'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

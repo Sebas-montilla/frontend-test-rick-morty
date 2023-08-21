@@ -46,7 +46,7 @@ const CharacterDashboard = () => {
           </h1>
         </div>
       </section>
-      <div className='overflow-auto'>
+      <div className="w-full">
         {character && (
           <>
             <DataTable columns={CharacterColumns} data={character} />
