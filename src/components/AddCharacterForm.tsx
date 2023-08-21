@@ -80,12 +80,11 @@ const AddCharacterForm = () => {
     addCharacter(newChar)
     router.push('/dashboard/characters')
     toast({
-      variant: 'success',
       description: `The character has been created succesfully!`
     })
   }
   return (
-    <div className="p-6 bg-input rounded-md md:mx-24 lg:mx-36">
+    <div className="p-6 bg-background-medium rounded-md md:mx-24 lg:mx-36">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField

@@ -34,7 +34,7 @@ const EpisodeDashboard = () => {
     <>
       <section className="flex flex-col gap-6 md:flex-row items-center justify-evenly px-8 pb-6">
         <div className="w-full md:w-[80%]">
-          <h1 className="font-heebo text-[2rem] text-accent-electricgreen md:text-[3rem] lg:text-[4rem]">
+          <h1 className="font-heebo text-[2rem] text-blue-solid md:text-[3rem] lg:text-[4rem]">
             Episodes
           </h1>
           <h1 className="font-poppins text-sm text-text">

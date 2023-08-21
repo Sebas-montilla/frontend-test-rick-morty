@@ -3,7 +3,7 @@ import AddCharacter from '@/sections/Dashboard/Character/AddCharacter/AddCharact
 
 const page = () => {
   return (
-    <main className='p-3 flex flex-col items-center justify-center'>
+    <main className='p-4 flex flex-col items-center justify-center'>
       <AddCharacter />
     </main>
   )
