@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark`}>
+      <body className={`${inter.className} dark h-screen w-screen overflow-hidden`}>
         <AuthContextProvider>
             {children}
             <Toaster />

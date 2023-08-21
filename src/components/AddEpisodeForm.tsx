@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -35,6 +36,7 @@ const FormSchema = z.object({
 const AddEpisodeForm = () => {
   const { addEpisode } = useStore()
   const { toast } = useToast()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema)
@@ -48,12 +50,14 @@ const AddEpisodeForm = () => {
       episode: data.episode
     }
     addEpisode(newEp)
+    router.push('/dashboard/episodes')
     toast({
+      variant: 'success',
       description: `The episode has been created succesfully!`
     })
   }
   return (
-    <div className="p-6">
+    <div className="p-6 bg-input rounded-md md:mx-24 lg:mx-36">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -63,7 +67,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" {...field} />
+                  <Input placeholder="Enter a name, e.g 'Rick and the Rick Kind'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -76,7 +80,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Air date</FormLabel>
                 <FormControl>
-                  <Input placeholder="type" {...field} />
+                  <Input placeholder="Enter a type, e.g 'Bird-person'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -89,7 +93,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Episode</FormLabel>
                 <FormControl>
-                  <Input placeholder="episode" {...field} />
+                  <Input placeholder="Enter a episode code, e.g 'S10E14'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

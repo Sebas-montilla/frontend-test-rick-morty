@@ -8,8 +8,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className='p-3'>
-      <div>Character Dashboard</div>
+    <main className='p-3 flex flex-col items-center justify-center'>
       <CharacterDashboard />
     </main>
   )

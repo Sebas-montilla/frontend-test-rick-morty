@@ -3,10 +3,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      Add Episode
+    <main className="p-3 flex flex-col items-center justify-center">
       <AddEpisode />
-    </div>
+    </main>
   )
 }
 

@@ -72,6 +72,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
     }
     editEpisode(row.id, updateEpisode)
     toast({
+      variant: `success`,
       description: `The episode ${data.name} has been updated`
     })
   }
@@ -110,7 +111,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="name" {...field} />
+                      <Input placeholder="e.g 'Rick and Einstein fight'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -123,7 +124,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Air date</FormLabel>
                     <FormControl>
-                      <Input placeholder="type" {...field} />
+                      <Input placeholder="e.g 'December 21, 2023'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -136,7 +137,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Episode</FormLabel>
                     <FormControl>
-                      <Input placeholder="episode" {...field} />
+                      <Input placeholder="e.g 'S03E19'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

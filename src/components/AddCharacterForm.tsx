@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -50,6 +51,7 @@ const FormSchema = z.object({
 const AddCharacterForm = () => {
   const { addCharacter } = useStore()
   const { toast } = useToast()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema)
@@ -76,12 +78,14 @@ const AddCharacterForm = () => {
       origin: { name: data.origin, url: '' }
     }
     addCharacter(newChar)
+    router.push('/dashboard/characters')
     toast({
+      variant: 'success',
       description: `The character has been created succesfully!`
     })
   }
   return (
-    <div className="p-6">
+    <div className="p-6 bg-input rounded-md md:mx-24 lg:mx-36">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -91,7 +95,7 @@ const AddCharacterForm = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" {...field} />
+                  <Input placeholder="Enter a name, e.g 'Hobzon" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

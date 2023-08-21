@@ -31,4 +31,4 @@ Prueba Técnica Frontend
         [x] iii.Para mostrar mensajes de las acciones https://ui.shadcn.com/docs/components/toast
         [x] iv.	Puede utilizar para los botones https://ui.shadcn.com/docs/components/button
 
-[] 4)	Despliegue el proyecto en un servidor como Vercel
+[x] 4)	Despliegue el proyecto en un servidor como Vercel
