@@ -53,7 +53,7 @@ const AddEpisodeForm = () => {
     })
   }
   return (
-    <div className="p-6">
+    <div className="p-6 bg-input rounded-md md:mx-24 lg:mx-36">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -63,7 +63,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" {...field} />
+                  <Input placeholder="Enter a name, e.g 'Zumbon'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -76,7 +76,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Air date</FormLabel>
                 <FormControl>
-                  <Input placeholder="type" {...field} />
+                  <Input placeholder="Enter a type, e.g 'Bird-person'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -89,7 +89,7 @@ const AddEpisodeForm = () => {
               <FormItem>
                 <FormLabel>Episode</FormLabel>
                 <FormControl>
-                  <Input placeholder="episode" {...field} />
+                  <Input placeholder="Enter a episode code, e.g 'S10E14'" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

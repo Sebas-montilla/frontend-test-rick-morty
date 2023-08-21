@@ -1,27 +1,34 @@
 'use client'
 
-import { MoreVertical, ChevronLast, ChevronFirst } from 'lucide-react'
+import { ChevronLast, ChevronFirst } from 'lucide-react'
 import { useContext, createContext, useState } from 'react'
 import Link from 'next/link'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { data } from '@/assets/data/SidebarLinks/sidebarLinks'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import Logo from '@/assets/images/Rick-And-Morty-Logo.png'
 
-const SidebarContext = createContext({ expanded: true })
+export const SidebarContext = createContext({
+  expanded: true
+})
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState<true | false>(true)
 
   return (
-    <aside className={`h-screen`}>
-      <nav className="h-full flex flex-col bg-white border-r shadow-sm">
-        <div className="p-4 pb-2 flex justify-between items-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png"
+    <aside className="h-screen lg:flex hidden">
+      <nav className="h-full flex flex-col bg-input border-r shadow-sm">
+        <div className="px-4 py-2 pb-2 flex justify-between items-center">
+          <Image
+            src={Logo}
             className={`overflow-hidden transition-all ${
               expanded ? 'w-32' : 'hidden'
             }`}
             alt="logo"
+            priority={true}
+            height={100}
+            width={128}
           />
           <button
             onClick={() => {
@@ -37,10 +44,10 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
 
-        <div className="border-t flex p-3">
+        <div className="border-t flex p-3 ">
           <Avatar>
             <AvatarImage src="https://4kwallpapers.com/images/wallpapers/rick-and-morty-rick-2560x2560-9494.png" />
-            <AvatarFallback>RS</AvatarFallback>
+            <AvatarFallback>MS</AvatarFallback>
           </Avatar>
           <div
             className={`
@@ -49,12 +56,11 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             `}
           >
             <div className="leading-4">
-              <h4 className="font-semibold text-black">Rick Sanchez</h4>
-              <span className="text-xs text-gray-600">
-                pickelrick@science.com
+              <h4 className="font-semibold text-text">Morty Smith</h4>
+              <span className="text-xs text-text/60">
+                mortysmith@science.com
               </span>
             </div>
-            <MoreVertical size={20} />
           </div>
         </div>
       </nav>
@@ -77,8 +83,8 @@ export function SidebarItem() {
           transition-colors group
           ${
             pathname === item.path
-              ? 'bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800'
-              : 'hover:bg-indigo-50 text-gray-600'
+              ? 'bg-white/10 text-accent-electricgreen/90 font-semibold'
+              : 'hover:bg-white/5 hover:text-accent-electricgreen/20 text-text/80'
           }
       `}
           >
@@ -95,7 +101,7 @@ export function SidebarItem() {
               <div
                 className={`
             absolute left-full rounded-md px-2 py-1 ml-6
-            bg-indigo-100 text-indigo-800 text-sm
+            bg-black/90 text-accent-electricgreen/90 text-sm
             invisible opacity-20 -translate-x-3 transition-all
             group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
         `}

@@ -110,7 +110,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="name" {...field} />
+                      <Input placeholder="e.g 'E.T'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -123,7 +123,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Air date</FormLabel>
                     <FormControl>
-                      <Input placeholder="type" {...field} />
+                      <Input placeholder="e.g 'December 21, 2023'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -136,7 +136,7 @@ export function DataTableRowActionsEpisode({ row }: DataTableRowActionsProps) {
                   <FormItem>
                     <FormLabel>Episode</FormLabel>
                     <FormControl>
-                      <Input placeholder="episode" {...field} />
+                      <Input placeholder="e.g 'S03E19'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

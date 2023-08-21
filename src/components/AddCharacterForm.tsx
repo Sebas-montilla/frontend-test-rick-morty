@@ -81,7 +81,7 @@ const AddCharacterForm = () => {
     })
   }
   return (
-    <div className="p-6">
+    <div className="p-6 bg-input rounded-md md:mx-24 lg:mx-36">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -91,7 +91,7 @@ const AddCharacterForm = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" {...field} />
+                  <Input placeholder="Enter a name, e.g 'Hobzon" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

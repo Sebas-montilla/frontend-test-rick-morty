@@ -32,6 +32,20 @@ const EpisodeDashboard = () => {
 
   return (
     <>
+      <section className="flex flex-col gap-6 md:flex-row items-center justify-evenly px-8 pb-6">
+        <div className="w-full md:w-[80%]">
+          <h1 className="font-heebo text-[2rem] text-accent-electricgreen md:text-[3rem] lg:text-[4rem]">
+            Episodes
+          </h1>
+          <h1 className="font-poppins text-sm text-text">
+            Hey there, Morty! Ready to mess around with characters? You can edit
+            names, species, status, and even genders – just be careful not to
+            screw up the multiverse. And hey, no need to scour the whole place –
+            use the search to find characters by type, name, status, or gender.
+            Just remember, Morty, you break it, you bought it. Happy meddling!
+          </h1>
+        </div>
+      </section>
       <div>
         {episode && (
           <>
