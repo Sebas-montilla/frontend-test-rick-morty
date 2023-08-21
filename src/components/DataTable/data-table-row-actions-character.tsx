@@ -90,6 +90,7 @@ export function DataTableRowActionsCharacter({
     }
     editCharacter(row.id, updateCharacter)
     toast({
+      variant: "success",
       description: `The character ${data.name} has been updated`
     })
   }
@@ -128,7 +129,7 @@ export function DataTableRowActionsCharacter({
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="name" {...field} />
+                      <Input placeholder="e.g 'Keetor'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -141,7 +142,7 @@ export function DataTableRowActionsCharacter({
                   <FormItem>
                     <FormLabel>Type</FormLabel>
                     <FormControl>
-                      <Input placeholder="type" {...field} />
+                      <Input placeholder="e.g 'Fish-person'" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

@@ -1,3 +1,4 @@
+import Nav from '@/components/Nav'
 import Sidebar from '@/components/Sidebar'
 
 export default function DashboardLayout({
@@ -6,9 +7,12 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <section className="flex">
+    <section className="w-full flex h-screen">
       <Sidebar />
-      {children}
+      <section className="flex flex-col w-full overflow-auto">
+        <Nav />
+        {children}
+      </section>
     </section>
   )
 }

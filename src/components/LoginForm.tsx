@@ -16,8 +16,6 @@ import {
   FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useToast } from '@/components/ui/use-toast'
-import { useAuthContext } from '@/context/authContext'
 import { useRouter } from 'next/navigation'
 
 const FormSchema = z.object({
@@ -30,8 +28,6 @@ const FormSchema = z.object({
 })
 
 export function LoginForm() {
-  const { toast } = useToast()
-  const { login } = useAuthContext()
   const router = useRouter()
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -49,7 +45,7 @@ export function LoginForm() {
   }
 
   return (
-    <div className="p-6 shadow-2xl shadow-cyan-500/50 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
+    <div className="p-6 shadow-2xl shadow-accent-electricgreen bg-background rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40">
       <FormUI {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField

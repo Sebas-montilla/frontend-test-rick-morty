@@ -17,30 +17,40 @@ module.exports = {
     },
     extend: {
       colors: {
+        text: '#F0F2EB',
         border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
+        input: '#0D0D0D',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
+        background: '#1F1F1F',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          foreground: 'hsl(var(--primary-foreground))',
+          green: {
+            darkgreen: '#318941',
+            mediumgreen: '#7FC141'
+          }
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          foreground: 'hsl(var(--secondary-foreground))',
+          moonstone: '#02AFC8',
+          lightblue: '#AAD4E3',
+          lightyellow: '#F5EF6A'
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
+          DEFAULT: '#C6171E',
           foreground: 'hsl(var(--destructive-foreground))'
         },
+        positive: '#81FC5B',
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))'
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          foreground: 'hsl(var(--accent-foreground))',
+          electricgreen: '#84FD61'
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -50,6 +60,10 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
         }
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        heebo: ['Heebo', 'sans-serif']
       },
       borderRadius: {
         lg: 'var(--radius)',
